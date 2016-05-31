@@ -1,0 +1,76 @@
+
+html, body {
+	height: 100%;
+}
+
+table{
+	width:80%;
+	margin: 10px auto auto auto;
+	
+}
+
+.tbcal {
+	
+	border-collapse: collapse;
+	width: 80%;
+	height: 80%;
+	table-layout: fixed;
+	background: #fff;
+	margin: 10px auto auto auto;
+	color: #222;
+	font-family: 'PT Sans', sans-serif;
+	font-size: 13px;
+}
+#tbcalender_week td{
+	height : 25px;
+}
+#tbcalender_month td span{
+	display : block;
+}
+#tbcalender_month .activity-span{
+	background-color:green;
+} 
+#tbcalender_month tr.noborder td {
+	border-top: 1px solid #fff;
+	border-right: 1px solid #fff;
+	border-left: 1px solid #fff;
+	height: 60px;
+}
+#tbcalender_week tr.noborder td {
+	border-top: 1px solid #fff;
+	border-right: 1px solid #fff;
+	border-left: 1px solid #fff;
+	padding-left :5px; 
+}
+#tbcalender_month td {
+	border: 1px solid #ccc;
+	
+}
+#tbcalender_month th {
+	border: 1px solid #ccc;
+	
+}
+
+
+
+#eventDiv {
+	background-color: #fff;
+	padding: 10px;
+	border: 1px solid #ccc;
+	display: none;
+	position: absolute;
+	left: 100px;
+	top: 200px;
+	border-radius: 5px;
+	padding: 20px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	transition: all 2s ease-in-out;
+	box-shadow: 1px 1px 1px #888888;
+	z-index : 500;
+	height : 300px;
+}
+
+.close:hover {
+	color: orange;
+}

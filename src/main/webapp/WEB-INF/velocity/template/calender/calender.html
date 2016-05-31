@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div style="height:100%" ng-controller="calenderCtrl">
+
+	<div id="eventDiv">
+
+		<div class="form-group">
+			<img src="./resources/images/Shutdown-52.png"
+				style="height: 16px; width: 16px;" ng-click="closePopup()"
+				class="close">
+		</div>
+		<br>
+		<div class="form-group">
+			<label></label>
+		</div>
+		<input type="hidden" value="{{activity.activity_date}}">
+		<div class="form-group">
+			<select class="form-control" ng-model="activity.activity">
+				<option>Åtgärd...</option>
+				<option>Ringa</option>
+				<option>Boka möte</option>
+				<option>Följa upp</option>
+				<option>Skicka erbjudande</option>
+				<option>Följa upp affärsmöjlighet</option>
+				<option>annat</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<select ng-model="activity.contact" ng-click="initContactSelect()" ng-options="contact as contact.firstName for contact in contacts" class="form-control">
+				<option>Kontaktperson...</option>
+
+			</select>
+		</div>
+		<div class="form-group">
+			<input ng-model="activity.description" type="text" class="form-control" placeholder="Beskrivning">
+		</div>
+		<div class="btn-group" role="group" aria-label="...">
+			<button ng-click="submit()" type="button" class="btn btn-success">Spara</button>
+			<button ng-click="" type="button" class="btn btn-success">Redigera</button>
+
+		</div>
+	</div>
+	<table border="0">
+		<tr>
+			<td>
+				<div class="btn-group" role="group" aria-label="...">
+					<button ng-click="getToday()" type="button" class="btn btn-default">Idag</button>
+
+				</div>
+				<div class="btn-group" role="group" aria-label="...">
+					<button ng-click="decreaseDate()" type="button"
+						class="btn btn-default"><</button>
+					<button ng-click="increaseDate()" type="button"
+						class="btn btn-default">></button>
+
+				</div>
+
+			</td>
+			<td>
+				<h4>
+					<span class="label label-default">{{ date }}</span>
+				</h4>
+			</td>
+			<td>
+
+				<div class="btn-group" role="group" aria-label="...">
+					<button ng-click="setCalender('day')" type="button" value="day"
+						class="btn btn-default">Dag</button>
+					<button ng-model="calenderType" ng-click="setCalender('week')"
+						type="button" value="week" class="btn btn-default">Vecka</button>
+					<button ng-click="setCalender('month')" type="button"
+						class="btn btn-default">Månad</button>
+
+				</div>
+			</td>
+		</tr>
+
+
+	</table>
+	<table class="tbcal" ng-show="tbcalmonthshow" id="tbcalender_month"
+		border="1">
+
+		<tr class="noborder">
+			<td>Söndag</td>
+			<td>Måndag</td>
+			<td>Tisdag</td>
+			<td>Onsdag</td>
+			<td>Torsdag</td>
+			<td>Fredag</td>
+			<td>Lördag</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>2</td>
+			<td>3</td>
+			<td>4</td>
+			<td>5</td>
+			<td>6</td>
+			<td>7</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
+	<table class="tbcal" border="1" ng-show="tbcalweekshow"
+		id="tbcalender_week">
+		<tr class="noborder">
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
+	<table ng-show="tbcaldayshow" id="tbcalender_day">
+		<tr>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+	</table>
+</div>

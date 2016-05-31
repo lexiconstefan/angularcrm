@@ -1,0 +1,129 @@
+body {
+	margin: 0px;
+	padding: 0px
+}
+
+input.save {
+	width: 7em;
+	height: 2em;
+	margin: 5px auto auto 10px;
+}
+
+.ss-item {
+	margin: 12px 0;
+}
+
+.ss-form-entry {
+	margin-bottom: 1.5em;
+}
+
+#cophdiv label {
+	display: block;
+	font-weight: bold;
+}
+
+div.vertical-line {
+	width: 1px; /* Line width */
+	background-color: black; /* Line color */
+	height: 100%; /* Override in-line if you want specific height. */
+	float: left; /* Causes the line to float to left of content. 
+    You can instead use position:absolute or display:inline-block
+    if this fits better with your design */
+	margin-left: 10px;
+}
+
+.form-div-left {
+	/*border-radius: 5px 30px 5px;*/
+	/*background: #efeff5;*/
+	margin:10px;
+	float: left;
+}
+.form-div{
+	margin:10px;
+}
+.styled-select {
+	border: 1px solid #ccc;
+	width: 210px;
+	border-radius: 3px;
+	overflow: hidden;
+	background: #fafafa url("./resources/images/select10.jpg") no-repeat 95%
+		50%;
+}
+
+/*select {
+	background: transparent;
+	appearance: none;
+	-moz-appearance: none; /* Firefox */
+	padding: 5px 8px;
+	width: 130%;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	box-shadow: none;
+	background: transparent;
+	-webkit-appearance: none;
+	background: #fafafa url("./resources/images/select10.jpg") no-repeat 95%
+		50%;
+}*/
+
+.select-style select:focus {
+	outline: none;
+}
+
+#divconovr label {
+	
+}
+
+.tmp-header-table {
+	height: 50px;
+	width: 100%;
+	border: 1px solid #ccc;
+	display: table;
+}
+.tmp-header-table span{
+	color : #ccc;
+	font : 1.8em verdana
+}
+.tablecell-middlealign {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.tmp-btn-header-table {
+	display: table;
+	height: 50px;
+}
+.clear{
+	clear:both;
+	padding:3px auto;
+}
+.popup-div{
+		background-color: #fff;
+	padding: 10px;
+	border: 1px solid #ccc;
+	position: absolute;
+	left: 100px;
+	top: 200px;
+	border-radius: 5px;
+	padding: 20px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	transition: all 2s ease-in-out;
+	box-shadow: 1px 1px 1px #888888;
+	z-index : 500;
+	
+}
+.modal-content textarea.form-control {
+    min-width: 100%;
+}
+#contact_redigera{
+	padding:20px;
+}
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width : 1224px) {
+	/* Styles */
+	.desktop-pull-right {
+		float: right !important;
+	}
+}
