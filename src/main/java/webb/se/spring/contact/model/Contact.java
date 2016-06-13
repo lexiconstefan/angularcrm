@@ -33,7 +33,7 @@ public class Contact {
 
 	@NotEmpty
 	@Size(max = 50)
-	@Column(name = "LASTNAME", nullable = false)
+	@Column(name = "LASTNAME", nullable = true)
 	private String lastName;
 
 	// @ManyToMany(fetch = FetchType.LAZY)
@@ -49,9 +49,8 @@ public class Contact {
 	@Column(name = "COMMENTS", nullable = true)
 	private String comments;
 
-	// @Size(max = 10)
-	// @Column(name = "status", nullable = false)
-	// private int status;
+	@Column(name = "STATUS", nullable = true)
+	private int status;
 
 	@OneToOne(cascade = CascadeType.ALL)
 	private Adress adress;
@@ -120,13 +119,13 @@ public class Contact {
 		this.comments = comments;
 	}
 
-	// public int getStatus() {
-	// return status;
-	// }
-	//
-	// public void setStatus(int status) {
-	// this.status = status;
-	// }
+	public int getStatus() {
+		return status;
+	}
+
+	public void setStatus(int status) {
+		this.status = status;
+	}
 
 	//
 	public Adress getAdress() {

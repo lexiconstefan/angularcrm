@@ -1,241 +1,268 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 
-<div ng-controller="contactCtrl" id="contact_redigera">
-	<div class="row">
-		<div class="col-md-1">
-			<div class="form-group">
-				<div class="input-group">
-					<input ng-click="editContact()" type="button"
-						class="btn btn-success" value="Spara">
-				</div>
-
-			</div>
-
-		</div>
-		<div class="col-md-1">
-			<div class="form-group">
-				<div class="input-group">
-					<a href="#/crm/contact/list" class="btn btn-info" role="button">Lista</a>
-				</div>
-			</div>
-
-		</div>
-	</div>
-	<div style="border: 1px solid #ccc">
-
-
-		<div class="media" style="border: 1px solid #ccc; height: 60px">
-			<div class="media-left media-middle">
-				<a href="#"> <img
-					style="height: 32px; width: 32px; margin: auto;"
-					class="media-object" src="./resources/images/Manager-52.png"
-					alt="Generic placeholder image"></a>
-			</div>
-			<div class="media-body" style="width: 150px">
-				<h3 class="media-heading">Kontakter</h3>
-
-			</div>
-			<div class="media-body" style="width: 40px">
-				<div style="height: 40px; width: 1px; border: 1px solid #ccc"></div>
-			</div>
-			<div class="media-body">
-				<span>Redigera</span>
-			</div>
-		</div>
-	</div>
-	<div class="form-div">
-		<h4>Adress</h4>
-		<input type="hidden" name="id" class="form-control"
-			value="{{contacts.adress.id}}">
+<div ng-controller="contactCtrl">
+	<div class="container-fluid">
 		<div class="row">
-			<div class="col-md-2">
-				<div class="form-group">
-					<label>Land :</label>
-					<div class="input-group">
-						<select name="country" class="form-control"
-							data-ng-model="contacts.adress.country">
-							<option>--Välj land</option>
-							<option value="se">Sverige</option>
-						</select>
+			<div style="border: 1px solid #ccc;" class="col-sm-2">
+				<div class="container-fluid">
+					<div class="row text-center">
+						<div class="col-sm-3">
+							<img class="center-block img-responsive" style="height: 32px;"
+								src="./resources/images/Manager-52.png" />
+						</div>
+						<div class="col-sm-9">
+							<h3>Kontaktperson</h3>
+						</div>
 					</div>
 
 				</div>
 			</div>
-			<div class="col-md-2">
-				<div class="form-group">
-					<label>Län :</label>
-					<div class="input-group">
-						<select name="county" class="form-control"
-							data-ng-model="contacts.adress.county">
-							<option>--Välj län</option>
-							<option value="skåne">Skåne</option>
-						</select>
-					</div>
-
-				</div>
-
+			<div style="border: 1px solid #ccc; height: 100%" class="col-sm-8">
+				<h4>Redigera</h4>
 			</div>
-			<div class="col-md-2">
-				<div class="form-group">
-					<label>Kommun :</label>
-					<div class="input-group">
-						<select name="municipality" class="form-control"
-							data-ng-model="contacts.adress.municipality">
-							<option>--Välj kommun</option>
-							<option value="bromölla">Bromölla</option>
-						</select>
-					</div>
-
-				</div>
-			</div>
-
-		</div>
-
-		<div class="row">
-			<div class="col-md-2">
-				<div class="form-group">
-					<label>Adress :</label>
-					<div class="input-group">
-						<input name="adress" type="text" class="form-control"
-							placeholder="Adress" data-ng-model="contacts.adress.adress">
-					</div>
-
-				</div>
-			</div>
-
-			<div class="col-md-2">
-				<div class="form-group">
-					<label>Postnummer :</label>
-					<div class="input-group">
-						<input name="zip" type="text" class="form-control"
-							placeholder="Postnummer" data-ng-model="contacts.adress.zip">
-					</div>
-
-				</div>
-			</div>
-
-		</div>
-		<div class="row">
-			<div class="col-md-6">
-				<hr />
-			</div>
-
-		</div>
-	</div>
-	<div id="divredcon" class="form-div-left">
-		<input type="hidden" name="id" class="form-control"
-			value="{{contacts.id}}">
-		<div class="form-group form-inline">
-			<label>Förnamn : </label>
-			<div class="input-group desktop-pull-right">
-				<input type="text" name="firstName" class="form-control"
-					placeholder="Förnamn" data-ng-model="contacts.firstName">
-			</div>
-		</div>
-		<div class="form-group form-inline">
-			<label>Efternamn : </label>
-			<div class="input-group desktop-pull-right">
-				<input type="text" name="lastName" class="form-control"
-					placeholder="Efternamn" data-ng-model="contacts.lastName">
-			</div>
-		</div>
-		<div class="form-group form-inline">
-			<label>Title : </label>
-			<div class="input-group desktop-pull-right">
-				<input type="text" name="title" class="form-control"
-					placeholder="Efternamn" data-ng-model="contacts.title">
-			</div>
-		</div>
-		<div class="form-group form-inline">
-			<label>Status : </label>
-			<div class="input-group desktop-pull-right">
-				<select class="form-control" name="status"
-					ng-model="contacts.status">
-					<option value="">---Please select---</option>
-					<!-- not selected / blank option -->
-					<option value="1">Aktiv</option>
-					<!-- interpolation -->
-					<option value="2">Slutat</option>
-					<option value="3">Annat</option>
-				</select>
-			</div>
-		</div>
-
-
-		<div class="form-group form-inline">
-			<label>Telefontyp </label> <label> Telefonnummer</label> <img
-				src="./resources/images/addphone.png" ng-click="addPhone()"
-				alt="Note" style="height: 16px; width: 16px">
-		</div>
-		<div id="cophdiv">
-			<div ng-if="!contacts.phone" class="form-group">
-				<div class="form-group form-inline">
-					<select class="form-control" name="phonetype">
-						<option value="home">Hem</option>
-						<option value="work">Arbete</option>
-						<option value="mobil">Mobile</option>
-					</select> <input type="text" class="form-control" name="phonenumber"
-						placeholder="Telefonnummer">
-				</div>
-			</div>
-			<div ng-repeat="phone in contacts.phone">
-				<div class="form-group form-inline">
-					<select class="form-control" ng-model="phone.type"
-						name="phonetype_{{$index}}">
-						<option value="home">Hem</option>
-						<option value="work">Arbete</option>
-						<option value="mobil">Mobile</option>
-					</select> <input type="text" name="phonenumber_{{$index}}"
-						class="form-control" placeholder="Telefonnummer"
-						ng-model="phone.number">
-				</div>
-
-			</div>
-		</div>
-		<div class="form-group form-inline">
-			<label>Email </label> <img src="./resources/images/Add.png"
-				ng-click="addMail()" alt="Note" style="height: 16px; width: 16px">
-		</div>
-		<div id="coemdiv">
-			<div class="form-group" ng-if="!contacts.mail">
-				<input class="form-control" type="text" placeholder="Email">
-			</div>
-		</div>
-
-	</div>
-	<div id="divconovr" class="form-div-left">
-		<div class="form-group form-inline">
-			<label>Yrkesroll : </label>
-			<div class="input-group desktop-pull-right">
-				<input name="occupation" type="text" class="form-control"
-					placeholder="Yrkesroll">
-			</div>
-		</div>
-		<div class="form-group">
-			<label>Intressen : </label>
-			<div class="input-group">
-				<textarea name="interest" class="form-control" rows="1"
-					style="min-width: 100%"></textarea>
-			</div>
-		</div>
-
-		<div class="form-group">
-			<label>Kommentarer : </label>
-			<div class="input-group">
-				<textarea name="comments" class="form-control" rows="2"></textarea>
-			</div>
-		</div>
-		<div class="form-group">
-			<div class="panel panel-default" style="width: 100%; margin: auto">
-				<div class="panel-heading">
-					<span class="lead">Dokument</span>
-				</div>
-				<div style="background-color: #fff; height: 100px;">document</div>
-			</div>
+			<div style="border: 1px solid #ccc;" class="col-sm-2"></div>
 		</div>
 	</div>
 
+	<hr />
+	<div class="container-fluid padding1_3">
+		<form name="contactForm" ng-submit="submitContact()" novalidate>
+			<div class="row padding-tb-1_3">
+				<div class="col-sm-12">
+					<button class="btn btn-primary">Spara</button>
+				</div>
+			</div>
 
+			<div class="row">
+	<input type="hidden" name="id" value="{{contacts.id}}" ng-model="contacts.id" />
+				<div class="col-md-7">
+
+					<div class="">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h3 class="panel-title">Adress</h3>
+							</div>
+							<div class="panel-body">
+								<div class="container-fluid">
+									<div class="row">
+										<div class="col-sm-4">
+											<div class="form-horizontal">
+												<div class="form-group">
+													<label for="country" class="col-sm-2 control-label">Land</label>
+													<div class="col-sm-10">
+
+														<select name="country" class="form-control" ng-model="contact.adress.country">
+															<option>--Välj land</option>
+															<option value="se">Sverige</option>
+														</select>
+
+													</div>
+												</div>
+
+
+											</div>
+										</div>
+										<div class="col-sm-4">
+											<div class="form-horizontal">
+												<div class="form-group">
+													<label class="col-sm-2 control-label">Län</label>
+													<div class="col-sm-10">
+														<select name="county" class="form-control" ng-model="contact.adress.county">
+															<option>--Välj län</option>
+															<option value="skåne">Skåne</option>
+														</select>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-sm-4">
+											<div class="form-horizontal">
+												<label class="col-sm-3 control-label">Kommun</label>
+												<div class="col-sm-9">
+
+													<select name="municipality" class="form-control"
+														data-ng-model="contact.adress.municipality">
+														<option>--Välj kommun</option>
+														<option value="bromölla">Bromölla</option>
+													</select>
+
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="panel-body">
+								<div class="container-fluid">
+									<div class="row">
+										<div class="col-sm-6">
+											<div class="form-horizontal">
+												<div class="form-group">
+													<label class="col-sm-2" for="adress">Adress</label>
+													<div class="col-sm-10">
+
+														<input type="text" class="form-control" id="adress"
+															placeholder="Adress" ng-model="contact.adress.adress">
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-sm-6">
+											<div class="form-horizontal">
+												<div class="form-group">
+													<label class="col-sm-2 control-label">Postnummer</label>
+													<div class="col-sm-10">
+
+														<input type="text" class="form-control" id="zip"
+															placeholder="Postnummer" ng-model="contact.adress.zip" />
+
+													</div>
+												</div>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h3 class="panel-title">Kontakt</h3>
+									</div>
+									<div class="panel-body">
+										<div class="form-horizontal">
+											<div class="form-group">
+												<label class="control-label col-sm-2" for="firstName">Förnamn</label>
+												<div class="col-sm-10">
+													<input ng-model="contact.firstName" placeholder="Förnamn *"
+														type="text" name="firstName"
+														ng-class="{'has-error':contactForm.firstName.$invalid}"
+														class="form-control" id="firstName" required />
+													<p class="help-block"
+														ng-show="contactForm.firstName.$invalid">Förnamn är
+														obligatorisk</p>
+												</div>
+
+											</div>
+											<div class="form-group">
+												<label class="control-label col-sm-2" for="lastName">Efternamn</label>
+												<div class="col-sm-10">
+													<input ng-model="contact.lastName" type="text"
+														class="form-control" id="lastName" />
+												</div>
+
+											</div>
+											<div class="form-group">
+												<label class="control-label col-sm-2" for="title">Title</label>
+												<div class="col-sm-10">
+													<input type="text" class="form-control" id="title" ng-model="contact.title" />
+												</div>
+
+											</div>
+											<div class="form-group">
+												<label class="control-label col-sm-2" for="title">Status</label>
+												<div class="col-sm-10">
+													<select ng-model="contact.status" name="status"
+														class="form-control"
+														ng-class="{'has-error':contactForm.status.$invalid}"
+														required>
+														<option>Välj status</option>
+														<option ng-repeat="stat in status"
+															ng-selected="{{contact.status==stat.value}}"
+															value="{{stat.value}}">{{stat.display}}</option>
+
+													</select>
+													<p class="help-block" ng-show="contactForm.status.$invalid">Status
+														måste väljas</p>
+												</div>
+											</div>
+
+											<div class="container-fluid">
+												<img class="pull-right" style="height: 16px"
+													src="./resources/images/addphone.png" />
+											</div>
+											<div class="form-horizontal">
+												<div class="col-sm-4">
+													<div class="form-group">
+														<label class="control-label">Telefontyp</label> <select
+															class="form-control">
+															<option value="home">Hem</option>
+															<option value="work">Arbete</option>
+															<option value="mobil">Mobil</option>
+														</select>
+													</div>
+
+												</div>
+												<div class="col-sm-1"></div>
+												<div class="col-sm-7">
+													<div class="form-group">
+														<label class="control-label">Nummer</label> <input
+															type="tel" class="form-control" />
+													</div>
+
+												</div>
+
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<div class="col-md-6">
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h3 class="panel-title">Övrigt</h3>
+										<span class="pull-right clickable"><i
+											class="glyphicon glyphicon-chevron-up"></i></span>
+									</div>
+									<div class="panel-body">
+										<div class="form-horizontal">
+											<div class="form-group">
+												<label class="control-label col-sm-2" for="occupation">Yrkesroll</label>
+												<div class="col-sm-10">
+													<input type="text" class="form-control" id="occupation" />
+												</div>
+
+											</div>
+										</div>
+										<div class="form-group">
+											<label>Intressen</label>
+											<textarea class="form-control"></textarea>
+										</div>
+										<div class="form-group">
+											<label>Kommentarer</label>
+											<textarea ng-model="contact.comments" name="comments" class="form-control"></textarea>
+										</div>
+										<div class="panel panel-success">
+											<div class="panel-heading">
+												<h3 class="panel-title">Dokument</h3>
+											</div>
+											<div class="panel-body">Body</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--Generic container-->
+
+
+
+
+
+				</div>
+				<!--First Main Container-->
+				<div class="col-md-5"></div>
+				<!--Secon Main Container-->
+			</div>
+			<!--First row-->
+		</form>
+	</div>
+	<!--class fluid-->
 </div>
 

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div>
+	<div style="background-color: #4d4d4d; height: 50px">
+		<div class="container">
+			<a href="#/crm/contact/list" class="btn btn-info" role="button">Lista</a>
+			<a href="#/crm/contact/redigera" class="btn btn-info" role="button">Redigera</a>
+			<input ng-click="submit('condiv')" type="button"
+				class="btn btn-success" value="Spara">
+		</div>
+
+	</div>
+	<div style="background-color: #f2f2f2; height: 100px">
+
+		<img src="./resources/images/Manager-52.png" alt="Note"
+			style="height: 32px; width: 32px; margin: 30px 0px 10px 40px">
+			<!-- 		<hr width="2" size="40" --> <!-- 			style="display: inline-block; margin-left: 10px; border: 1px solid #ccc;"> -->
+		<h3
+			style="display: inline-block; color: #808080; margin: 5px auto auto 10px;">Ny
+			Kontakt</h3>
+		<hr style="border: 1px solid #ccc;">
+	</div>
+	<div class="form-div-left">
+
+		<img src="./resources/images/Manager-52.png" alt="Note"
+			style="height: 24px; width: 24px; margin: 7px">
+		<div class="form-group">
+			<input type="text" name="firstName" class="form-control"
+				placeholder="Förnamn">
+		</div>
+
+		<div class="form-group">
+			<input type="text" name="lastName" class="form-control"
+				placeholder="Efternamn">
+		</div>
+		<div class="form-group form-inline">
+			<label>Telefontyp : </label> <label> Telefonnummer :</label>
+			<label>Ny : </label>
+			<img src="./resources/images/addphone.png"
+				ng-click="addPhone()" alt="Note"
+				style="height: 16px; width: 16px">
+		</div>
+		<div id="cophdiv">
+
+
+			
+			<div class="form-group form-inline">
+				<select class="form-control"  name="phonetype">
+					<option value="home">Hem</option>
+					<option value="work">Arbete</option>
+					<option value="mobil">Mobile</option>
+				</select> <input type="text" name="phonenumber" class="form-control"
+					placeholder="Telefonnummer">
+			</div>
+
+		</div>
+		<div class="form-group">
+			<input type="text" name="title" class="form-control"
+				placeholder="Title">
+		</div>
+		<div class="form-group">
+			<input type="text" class="form-control" placeholder="E-mail">
+		</div>
+	</div>
+	<div class="form-div-left" id="companydiv">
+		<div class="form-group form-inline">
+			<img src="./resources/images/Department Filled-50.png" alt="Note"
+				style="height: 24px; width: 24px; margin: 7px">
+			<div class="checkbox">
+				<label><input type="checkbox" value="">Företag</label>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<input type="text" class="form-control" placeholder="Företagsnamn">
+		</div>
+		<div class="form-group">
+			<input type="text" class="form-control"
+				placeholder="Organisationsnummer">
+		</div>
+
+		<div class="form-group">
+			<input type="text" class="form-control" placeholder="Adress">
+		</div>
+		<div class="form-group">
+			<input type="text" class="form-control" placeholder="Postnummer">
+		</div>
+		<div class="form-group">
+			<input type="text" class="form-control" placeholder="Postort">
+		</div>
+		<div class="form-group">
+			<select class="form-control">
+				<option>Land...</option>
+
+			</select>
+		</div>
+		<div class="form-group">
+			<select class="form-control">
+				<option>Län...</option>
+
+			</select>
+		</div>
+		<div class="form-group">
+			<select class="form-control">
+				<option>Postort...</option>
+
+			</select>
+		</div>
+	</div>
+</div>

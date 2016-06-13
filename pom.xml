@@ -155,6 +155,7 @@
 						<warSourceDirectory>src/main/webapp</warSourceDirectory>
 						<warName>java-angular</warName>
 						<failOnMissingWebXml>false</failOnMissingWebXml>
+						<outputDirectory>C:\wildfly-9.0.2.Final\wildfly-9.0.2.Final\standalone\deployments</outputDirectory>
 					</configuration>
 				</plugin>
 			</plugins>
